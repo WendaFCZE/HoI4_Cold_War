@@ -1,0 +1,30 @@
+
+state={
+	id=799
+	name="STATE_799"
+	manpower = 2595983
+	resources={
+		oil=1 # was: 2
+	}
+	
+	state_category = large_city
+	
+	history={
+		owner = BAZ
+		victory_points = {
+			9648 10 
+		}
+		buildings = {
+			infrastructure = 7
+			arms_factory = 3
+			industrial_complex = 5
+			air_base = 6
+		}
+		add_core_of = BAZ
+		add_core_of = AUS
+	}
+
+	provinces={
+		653 668 671 3673 3674 6673 6687 6690 9646 9648 9661 9679 11612 11630
+	}
+}
