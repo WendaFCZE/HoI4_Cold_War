@@ -8,17 +8,52 @@
 		}
 	}
 	
-	#Focus for 1948 Constitution
+	#Benes decrees
 	focus = {
-		id = CZE_1948_constitution
+		id = CZE_benes_decrees
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 30
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = CZE_divided_nation }
+				remove_ideas = CZE_divided_nation
+			}
+		}
+	}
+	
+	#Citizenship decree
+	focus = {
+		id = CZE_citizenship_decree
 		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 45
-		y = 8
+		prerequisite = { focus = CZE_benes_decrees }
+		x = -2
+		y = 1
+		relative_position_id = CZE_benes_decrees
+
 		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_take_control_of_the_government }
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -28,58 +63,29 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
-	#Focus for Collectivization
+	
+	#Land reform decree
 	focus = {
-		id = CZE_collectivization
-		icon = GFX_focus_prc_agrarian_socialism
-		x = 45
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_1948_constitution }
-		ai_will_do = {
-			factor = 1
-		}
+		id = CZE_land_reforms
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = CZE_benes_decrees }
+		x = 0
+		y = 1
+		relative_position_id = CZE_benes_decrees
 
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Take control of the government
-	focus = {
-		id = CZE_take_control_of_the_government
-		icon = GFX_goal_support_communism
-		x = 45
-		y = 7
 		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = CZE_create_peoples_militia 
-			focus = CZE_reorganize_ministry_of_internal_affairs 
-		}
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -89,26 +95,29 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
-	#Focus for Create People's Militia
+	
+	#Nationalization decree
 	focus = {
-		id = CZE_create_peoples_militia
-		icon = GFX_focus_YUG_pan_slavic_congress
-		x = 47
-		y = 6
+		id = CZE_nationalisation_of_industry
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = CZE_benes_decrees }
+		x = 2
+		y = 1
+		relative_position_id = CZE_benes_decrees
+
 		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_decline_ministers_resignations }
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -118,326 +127,33 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
-	#Focus for Reorganize Ministry of Internal Affairs
-	focus = {
-		id = CZE_reorganize_ministry_of_internal_affairs
-		icon = GFX_goal_unknown
-		x = 43
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_decline_ministers_resignations }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Legacy of the First Republic
-	focus = {
-		id = CZE_legacy_of_the_first_republic
-		icon = GFX_goal_unknown
-		x = 30
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_accept_ministers_resignations }
-		mutually_exclusive = { focus = CZE_support_monarchist_tendencies }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Support monarchist tendencies
-	focus = {
-		id = CZE_support_monarchist_tendencies
-		icon = GFX_focus_generic_monarchy_1
-		x = 15
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_accept_ministers_resignations }
-		mutually_exclusive = { focus = CZE_legacy_of_the_first_republic }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Decline minister's resignations
-	focus = {
-		id = CZE_decline_ministers_resignations
-		icon = GFX_goal_unknown
-		x = 45
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_government_crisis }
-		mutually_exclusive = { focus = CZE_accept_ministers_resignations }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Accept minister's resignations
-	focus = {
-		id = CZE_accept_ministers_resignations
-		icon = GFX_goal_unknown
-		x = 22
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_government_crisis }
-		mutually_exclusive = { focus = CZE_decline_ministers_resignations }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Government crisis
-	focus = {
-		id = CZE_government_crisis
-		icon = GFX_goal_unknown
-		x = 30
-		y = 4
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_two_year_plan }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
+	
 	#Focus for 1947 Election
 	focus = {
 		id = CZE_1947_election
 		icon = GFX_goal_unknown
-		x = 30
-		y = 2
-		cost = 5
-		available_if_capitulated = yes
 		prerequisite = { 
 			focus = CZE_land_reforms 
 			focus = CZE_citizenship_decree 
 			focus = CZE_nationalisation_of_industry 
 		}
-		ai_will_do = {
-			factor = 1
-		}
+		x = 0
+		y = 2
+		relative_position_id = CZE_benes_decrees
 
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Land reforms
-	focus = {
-		id = CZE_land_reforms
-		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 30
-		y = 1
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_bene_decrees }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Citizenship decree
-	focus = {
-		id = CZE_citizenship_decree
-		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 28
-		y = 1
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_bene_decrees }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Join the Warsaw Pact
-	focus = {
-		id = CZE_join_the_warsaw_pact
-		icon = GFX_goal_support_communism
-		x = 45
-		y = 14
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = CZE_destalinization 
-			focus = CZE_follow_gottwalds_vision 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Beneš decrees
-	focus = {
-		id = CZE_bene_decrees
-		icon = GFX_focus_renounce_the_treaty_of_trianon
-		x = 30
-		y = 0
 		cost = 5
-		available_if_capitulated = yes
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -447,84 +163,29 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
-	#Focus for Nationalisation of Industry
-	focus = {
-		id = CZE_nationalisation_of_industry
-		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 32
-		y = 1
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_bene_decrees }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
+	
 	#Focus for Two year plan
 	focus = {
 		id = CZE_two_year_plan
 		icon = GFX_goal_generic_construction2
-		x = 30
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
 		prerequisite = { focus = CZE_1947_election }
-		ai_will_do = {
-			factor = 1
-		}
+		x = 0
+		y = 1
+		relative_position_id = CZE_1947_election
 
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Finish electrfying the country
-	focus = {
-		id = CZE_finish_electrfying_the_country
-		icon = GFX_goal_unknown
-		x = 38
-		y = 16
 		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_fight_revisionism }
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -534,26 +195,257 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
+	
+	#Focus for Government crisis
+	focus = {
+		id = CZE_government_crisis
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_two_year_plan }
+		x = 0
+		y = 1
+		relative_position_id = CZE_two_year_plan
 
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Decline minister's resignations
+	focus = {
+		id = CZE_decline_ministers_resignations
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_government_crisis }
+		mutually_exclusive = { focus = CZE_accept_ministers_resignations }
+		x = 15
+		y = 1
+		relative_position_id = CZE_government_crisis
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Reorganize Ministry of Internal Affairs
+	focus = {
+		id = CZE_reorganize_ministry_of_internal_affairs
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_decline_ministers_resignations }
+		x = -1
+		y = 1
+		relative_position_id = CZE_decline_ministers_resignations
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Create People's Militia
+	focus = {
+		id = CZE_create_peoples_militia
+		icon = GFX_focus_YUG_pan_slavic_congress
+		prerequisite = { focus = CZE_decline_ministers_resignations }
+		x = 1
+		y = 1
+		relative_position_id = CZE_decline_ministers_resignations
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Take control of the government
+	focus = {
+		id = CZE_take_control_of_the_government
+		icon = GFX_goal_support_communism
+		prerequisite = { 
+			focus = CZE_create_peoples_militia 
+			focus = CZE_reorganize_ministry_of_internal_affairs 
+		}
+		x = 0
+		y = 2
+		relative_position_id = CZE_decline_ministers_resignations
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for 1948 Constitution
+	focus = {
+		id = CZE_1948_constitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = CZE_take_control_of_the_government }
+		x = 0
+		y = 1
+		relative_position_id = CZE_take_control_of_the_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Collectivization
+	focus = {
+		id = CZE_collectivization
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = CZE_1948_constitution }
+		x = 0
+		y = 1
+		relative_position_id = CZE_1948_constitution
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
 	#Focus for Create workcamps
 	focus = {
 		id = CZE_create_workcamps
 		icon = GFX_focus_mex_arrest_general_cedillo
-		x = 43
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
 		prerequisite = { focus = CZE_1948_constitution }
+		x = -2
+		y = 1
+		relative_position_id = CZE_1948_constitution
+
+		cost = 10
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -563,26 +455,29 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
+	
 	#Focus for Close the borders
 	focus = {
 		id = CZE_close_the_borders
 		icon = GFX_goal_continuous_restrict_freedom
-		x = 47
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
 		prerequisite = { focus = CZE_1948_constitution }
+		x = 2
+		y = 1
+		relative_position_id = CZE_1948_constitution
+
+		cost = 10
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -592,30 +487,33 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
+	
 	#Focus for Reform Administration
 	focus = {
 		id = CZE_reform_administration
 		icon = GFX_goal_unknown
-		x = 43
-		y = 10
-		cost = 10
-		available_if_capitulated = yes
 		prerequisite = { 
 			focus = CZE_collectivization 
 			focus = CZE_create_workcamps 
 			focus = CZE_close_the_borders 
 		}
+		x = -2
+		y = 2
+		relative_position_id = CZE_1948_constitution
+
+		cost = 10
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -625,30 +523,33 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
+	
 	#Focus for Accept soviet guidance
 	focus = {
 		id = CZE_accept_soviet_guidance
 		icon = GFX_focus_chi_mission_to_the_soviet_union
-		x = 47
-		y = 10
-		cost = 10
-		available_if_capitulated = yes
 		prerequisite = { 
 			focus = CZE_collectivization 
-			focus = CZE_close_the_borders 
 			focus = CZE_create_workcamps 
+			focus = CZE_close_the_borders 
 		}
+		x = 2
+		y = 2
+		relative_position_id = CZE_1948_constitution
+
+		cost = 10
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -658,30 +559,33 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
+	
 	#Focus for Party purges
 	focus = {
 		id = CZE_party_purges
 		icon = GFX_goal_unknown
-		x = 45
-		y = 11
-		cost = 15
-		available_if_capitulated = yes
 		prerequisite = { 
 			focus = CZE_collectivization 
 			focus = CZE_create_workcamps 
 			focus = CZE_close_the_borders 
 		}
+		x = 0
+		y = 2
+		relative_position_id = CZE_1948_constitution
+
+		cost = 10
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -691,58 +595,29 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
+	
 	#Focus for Currency reform
 	focus = {
 		id = CZE_currency_reform
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = 45
-		y = 12
-		cost = 10
-		available_if_capitulated = yes
 		prerequisite = { focus = CZE_party_purges }
-		ai_will_do = {
-			factor = 1
-		}
+		x = 0
+		y = 1
+		relative_position_id = CZE_party_purges
 
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Czechoslovak Television
-	focus = {
-		id = CZE_czechoslovak_television
-		icon = GFX_goal_generic_radar
-		x = 43
-		y = 14
 		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = CZE_follow_gottwalds_vision 
-			focus = CZE_destalinization 
-		}
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -752,145 +627,30 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
-	#Focus for Rebuilding the army
-	focus = {
-		id = CZE_rebuilding_the_army
-		icon = GFX_goal_generic_allies_build_infantry
-		x = 70
-		y = 0
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Tighten state control
-	focus = {
-		id = CZE_tighten_state_control
-		icon = GFX_goal_unknown
-		x = 50
-		y = 14
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_follow_gottwalds_vision }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Establish the Nuclear physics faculty
-	focus = {
-		id = CZE_establish_the_nuclear_physics_faculty
-		icon = GFX_goal_unknown
-		x = 38
-		y = 15
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_supress_religion }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for USSR-CZE Science Cooperation
-	focus = {
-		id = CZE_ussrcze_science_cooperation
-		icon = GFX_goal_generic_scientific_exchange
-		x = 47
-		y = 14
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = CZE_destalinization 
-			focus = CZE_follow_gottwalds_vision 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
+	
 	#Focus for Destalinization
 	focus = {
 		id = CZE_destalinization
 		icon = GFX_goal_unknown
-		x = 40
-		y = 13
-		cost = 10
-		available_if_capitulated = yes
 		prerequisite = { focus = CZE_currency_reform }
 		mutually_exclusive = { focus = CZE_follow_gottwalds_vision }
+		x = -5
+		y = 1
+		relative_position_id = CZE_currency_reform
+
+		cost = 10
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -900,233 +660,32 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
-	#Focus for Fight revisionism
+	
+	#Focus for Czechoslovak Television
 	focus = {
-		id = CZE_fight_revisionism
-		icon = GFX_goal_unknown
-		x = 40
-		y = 15
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_supress_religion }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Aftermath of WW2
-	focus = {
-		id = CZE_aftermath_of_ww2
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
-		x = 60
-		y = 0
-		cost = 10
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_INDUSTRY } 
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Limit influence of foreign uprisings
-	focus = {
-		id = CZE_limit_influence_of_foreign_uprisings
-		icon = GFX_goal_unknown
-		x = 42
-		y = 15
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_supress_religion }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Establish revolution comitee
-	focus = {
-		id = CZE_establish_revolution_comitee
-		icon = GFX_goal_unknown
-		x = 48
-		y = 15
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_tighten_state_control }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Create the Nuclear Institute
-	focus = {
-		id = CZE_create_the_nuclear_institute
-		icon = GFX_goal_unknown
-		x = 52
-		y = 15
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_tighten_state_control }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Align and control universities
-	focus = {
-		id = CZE_align_and_control_universities
-		icon = GFX_goal_unknown
-		x = 42
-		y = 16
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_fight_revisionism }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Strenghten the state
-	focus = {
-		id = CZE_strenghten_the_state
-		icon = GFX_goal_unknown
-		x = 40
-		y = 16
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_fight_revisionism }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for 1960 Constitution
-	focus = {
-		id = CZE_1960_constitution
-		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 40
-		y = 17
-		cost = 10
-		available_if_capitulated = yes
+		id = CZE_czechoslovak_television
+		icon = GFX_goal_generic_radar
 		prerequisite = { 
-			focus = CZE_strenghten_the_state 
-			focus = CZE_align_and_control_universities 
-			focus = CZE_finish_electrfying_the_country 
+			focus = CZE_destalinization 
+			focus = CZE_follow_gottwalds_vision 
 		}
+		x = -2
+		y = 2
+		relative_position_id = CZE_currency_reform
+
+		cost = 10
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -1136,26 +695,32 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-
-	#Focus for Expand the secret police
+	
+	#Focus for USSR-CZE Science Cooperation
 	focus = {
-		id = CZE_expand_the_secret_police
-		icon = GFX_goal_unknown
-		x = 50
-		y = 15
+		id = CZE_ussrcze_science_cooperation
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { 
+			focus = CZE_destalinization 
+			focus = CZE_follow_gottwalds_vision 
+		}
+		x = 2
+		y = 2
+		relative_position_id = CZE_currency_reform
+
 		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_tighten_state_control }
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -1165,10 +730,78 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Create People's Army
+	focus = {
+		id = CZE_create_people_army
+		icon = GFX_goal_support_communism
+		prerequisite = { 
+			focus = CZE_destalinization 
+			focus = CZE_follow_gottwalds_vision 
+		}
+		x = 0
+		y = 2
+		relative_position_id = CZE_currency_reform
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Join the Warsaw Pact
+	focus = {
+		id = CZE_join_the_warsaw_pact
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = CZE_create_people_army }
+		x = 0
+		y = 1
+		relative_position_id = CZE_create_people_army
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -1178,42 +811,15 @@
 	focus = {
 		id = CZE_demolish_the_stalin_statue
 		icon = GFX_goal_unknown
-		x = 38
-		y = 14
-		cost = 10
-		available_if_capitulated = yes
 		prerequisite = { focus = CZE_destalinization }
-		ai_will_do = {
-			factor = 1
-		}
+		x = -2
+		y = 1
+		relative_position_id = CZE_destalinization
 
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Focus on the heavy industry
-	focus = {
-		id = CZE_focus_on_the_heavy_industry
-		icon = GFX_goal_generic_production2
-		x = 58
-		y = 2
 		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_demilitarize_the_economy }
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -1223,132 +829,11 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
 
-	#Focus for Stabilize the financial sector
-	focus = {
-		id = CZE_stabilize_the_financial_sector
-		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = 60
-		y = 2
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_demilitarize_the_economy }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Rebuild the infrastructure
-	focus = {
-		id = CZE_rebuild_the_infrastructure
-		icon = GFX_goal_generic_production
-		x = 62
-		y = 2
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_demilitarize_the_economy }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Expand the industry sector
-	focus = {
-		id = CZE_expand_the_industry_sector
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 60
-		y = 4
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = CZE_two_year_plan 
-			focus = CZE_rebuild_the_infrastructure 
-			focus = CZE_stabilize_the_financial_sector 
-			focus = CZE_focus_on_the_heavy_industry 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Follow Gottwald's vision
-	focus = {
-		id = CZE_follow_gottwalds_vision
-		icon = GFX_goal_unknown
-		x = 50
-		y = 13
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_currency_reform }
-		mutually_exclusive = { focus = CZE_destalinization }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -1358,42 +843,15 @@
 	focus = {
 		id = CZE_supress_religion
 		icon = GFX_focus_generic_socialist_science
-		x = 40
-		y = 14
-		cost = 10
-		available_if_capitulated = yes
 		prerequisite = { focus = CZE_destalinization }
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	#Focus for Demilitarize the economy
-	focus = {
-		id = CZE_demilitarize_the_economy
-		icon = GFX_goal_generic_production
-		x = 60
+		x = 0
 		y = 1
+		relative_position_id = CZE_destalinization
+
 		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = CZE_aftermath_of_ww2 }
+
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -1403,16 +861,557 @@
 		bypass = {
 
 		}
-		
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Fight revisionism
+	focus = {
+		id = CZE_fight_revisionism
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_supress_religion }
+		x = 0
+		y = 1
+		relative_position_id = CZE_supress_religion
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Establish the Nuclear physics faculty
+	focus = {
+		id = CZE_establish_the_nuclear_physics_faculty
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_supress_religion }
+		x = -2
+		y = 0
+		relative_position_id = CZE_fight_revisionism
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Limit influence of foreign uprisings
+	focus = {
+		id = CZE_limit_influence_of_foreign_uprisings
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_supress_religion }
+		x = 2
+		y = 0
+		relative_position_id = CZE_fight_revisionism
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Strenghten the state
+	focus = {
+		id = CZE_strenghten_the_state
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_fight_revisionism }
+		x = 0
+		y = 1
+		relative_position_id = CZE_fight_revisionism
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Finish electrfying the country
+	focus = {
+		id = CZE_finish_electrfying_the_country
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_fight_revisionism }
+		x = -2
+		y = 0
+		relative_position_id = CZE_strenghten_the_state
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Align and control universities
+	focus = {
+		id = CZE_align_and_control_universities
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_fight_revisionism }
+		x = 2
+		y = 0
+		relative_position_id = CZE_strenghten_the_state
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	
+	#Focus for 1960 Constitution
+	focus = {
+		id = CZE_1960_constitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = CZE_strenghten_the_state }
+		prerequisite = { focus = CZE_align_and_control_universities }
+		prerequisite = { focus = CZE_finish_electrfying_the_country }
+		x = 0
+		y = 1
+		relative_position_id = CZE_strenghten_the_state
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#################################################################
+	# 
+	# ALTERNATIVES
+	
+	#Focus for Accept minister's resignations
+	focus = {
+		id = CZE_accept_ministers_resignations
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_government_crisis }
+		mutually_exclusive = { focus = CZE_decline_ministers_resignations }
+		x = -8
+		y = 1
+		relative_position_id = CZE_government_crisis
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	##	
+	##	 MONARCHY SUBTREE
+	##	
+	
+	#Focus for Support monarchist tendencies
+	focus = {
+		id = CZE_support_monarchist_tendencies
+		icon = GFX_focus_generic_monarchy_1
+		prerequisite = { focus = CZE_accept_ministers_resignations }
+		mutually_exclusive = { focus = CZE_legacy_of_the_first_republic }
+		x = -7
+		y = 1
+		relative_position_id = CZE_accept_ministers_resignations
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	##	
+	##	 DEMOCRATIC SUBTREE
+	##	
+	
+	#Focus for Legacy of the First Republic
+	focus = {
+		id = CZE_legacy_of_the_first_republic
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_accept_ministers_resignations }
+		mutually_exclusive = { focus = CZE_support_monarchist_tendencies }
+		x = 8
+		y = 1
+		relative_position_id = CZE_accept_ministers_resignations
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#####################
+	# STALINISM
+	
+	#Focus for Follow Gottwald's vision
+	focus = {
+		id = CZE_follow_gottwalds_vision
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_currency_reform }
+		mutually_exclusive = { focus = CZE_destalinization }
+		x = 5
+		y = 1
+		relative_position_id = CZE_currency_reform
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Tighten state control
+	focus = {
+		id = CZE_tighten_state_control
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_follow_gottwalds_vision }
+		x = 0
+		y = 1
+		relative_position_id = CZE_follow_gottwalds_vision
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Establish revolution comitee
+	focus = {
+		id = CZE_establish_revolution_comitee
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_tighten_state_control }
+		x = 0
+		y = 1
+		relative_position_id = CZE_tighten_state_control
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Expand the secret police
+	focus = {
+		id = CZE_expand_the_secret_police
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_tighten_state_control }
+		x = -2
+		y = 0
+		relative_position_id = CZE_establish_revolution_comitee
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Create the Nuclear Institute
+	focus = {
+		id = CZE_create_the_nuclear_institute
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_tighten_state_control }
+		x = 2
+		y = 0
+		relative_position_id = CZE_establish_revolution_comitee
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+
+	###########################################################
+	###################		  ECONOMY        ##################
+	###########################################################
+
+	#Focus for Aftermath of WW2
+	focus = {
+		id = CZE_aftermath_of_ww2
+		icon = GFX_goal_unknown
+		x = 60
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
 
 
+	##########################################################
+	###################		   ARMY         ##################
+	##########################################################
 
 #End of focuses 
  }
