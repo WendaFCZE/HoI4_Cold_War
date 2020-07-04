@@ -1171,6 +1171,202 @@
 			add_research_slot = 1
 		}
 	}
+
+	#Focus for Modify the constitution
+	focus = {
+		id = CZE_modify_the_constitution
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_support_monarchist_tendencies }
+		x = -2
+		y = 1
+		relative_position_id = CZE_support_monarchist_tendencies
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Return assets to nobility
+	focus = {
+		id = CZE_return_assets_to_nobility
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_support_monarchist_tendencies }
+		x = 0
+		y = 1
+		relative_position_id = CZE_support_monarchist_tendencies
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Renew the league of lords
+	focus = {
+		id = CZE_renew_the_league_of_lords
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_support_monarchist_tendencies }
+		x = 2
+		y = 1
+		relative_position_id = CZE_support_monarchist_tendencies
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Prepare for coronation
+	focus = {
+		id = CZE_prepare_for_coronation
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_modify_the_constitution }
+		prerequisite = { focus = CZE_return_assets_to_nobility }
+		prerequisite = { focus = CZE_renew_the_league_of_lords }
+		x = 0
+		y = 2
+		relative_position_id = CZE_support_monarchist_tendencies
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Crown Jan Masaryk
+	focus = {
+		id = CZE_crown_jan_masaryk
+		icon = GFX_focus_eng_god_save_the_king
+		prerequisite = { focus = CZE_prepare_for_coronation }
+		mutually_exclusive = { focus = CZE_crown_one_of_the_houses }
+		x = 5
+		y = 1
+		relative_position_id = CZE_prepare_for_coronation
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Crown one of the houses
+	focus = {
+		id = CZE_crown_one_of_the_houses
+		icon = GFX_focus_eng_god_save_the_king
+		prerequisite = { focus = CZE_prepare_for_coronation }
+		mutually_exclusive = { focus = CZE_crown_jan_masaryk }
+		x = -5
+		y = 1
+		relative_position_id = CZE_prepare_for_coronation
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
 	
 	##	
 	##	 DEMOCRATIC SUBTREE
@@ -1185,6 +1381,70 @@
 		x = 8
 		y = 1
 		relative_position_id = CZE_accept_ministers_resignations
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Form National Front
+	focus = {
+		id = CZE_from_national_front
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_legacy_of_the_first_republic }
+		x = 0
+		y = 1
+		relative_position_id = CZE_legacy_of_the_first_republic
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Hold new elections
+	focus = {
+		id = CZE_hold_new_elections
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_from_national_front }
+		x = 0
+		y = 1
+		relative_position_id = CZE_from_national_front
 
 		cost = 5
 
@@ -1381,7 +1641,7 @@
 	#Focus for Aftermath of WW2
 	focus = {
 		id = CZE_aftermath_of_ww2
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_construct_civ_factory
 		x = 60
 		y = 0
 
@@ -1408,10 +1668,789 @@
 		}
 	}
 
+	#Focus for 1. Five year plan
+	focus = {
+		id = CZE_first_five_year_plan
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_aftermath_of_ww2 }
+		x = 2
+		y = 2
+		relative_position_id = CZE_aftermath_of_ww2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Kolektivizace vesnic
+	focus = {
+		id = CZE_colectivization_of_villages
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_first_five_year_plan }
+		x = 0
+		y = 1
+		relative_position_id = CZE_first_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Industrialization
+	focus = {
+		id = CZE_industrialization
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_first_five_year_plan }
+		x = 2
+		y = 1
+		relative_position_id = CZE_first_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Founding of cooperatives
+	focus = {
+		id = CZE_founding_of_cooperatives
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_first_five_year_plan }
+		x = 4
+		y = 1
+		relative_position_id = CZE_first_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Heavy industrialization
+	focus = {
+		id = CZE_heavy_industrialization
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_first_five_year_plan }
+		x = 6
+		y = 1
+		relative_position_id = CZE_first_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Agricultural reform
+	focus = {
+		id = CZE_agricultural_reform
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_first_five_year_plan }
+		x = -2
+		y = 1
+		relative_position_id = CZE_first_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for 2. Five year plan
+	focus = {
+		id = CZE_second_five_year_plan
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_colectivization_of_villages }
+		prerequisite = { focus = CZE_industrialization }
+		prerequisite = { focus = CZE_founding_of_cooperatives }
+		prerequisite = { focus = CZE_heavy_industrialization }
+		prerequisite = { focus = CZE_agricultural_reform }
+		x = 0
+		y = 2
+		relative_position_id = CZE_colectivization_of_villages
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Agriculture mechanization
+	focus = {
+		id = CZE_agriculture_mechanization
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_second_five_year_plan }
+		x = 0
+		y = 1
+		relative_position_id = CZE_second_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Expand petrochemical industry
+	focus = {
+		id = CZE_expand_petrochemical_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_second_five_year_plan }
+		x = 2
+		y = 1
+		relative_position_id = CZE_second_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Expand heavy industry
+	focus = {
+		id = CZE_expand_heavy_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_second_five_year_plan }
+		x = 4
+		y = 1
+		relative_position_id = CZE_second_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Zelezarny Kosice
+	focus = {
+		id = CZE_zelezarny_kosice
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_second_five_year_plan }
+		x = 6
+		y = 1
+		relative_position_id = CZE_second_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Zbrojovky Slovensko
+	focus = {
+		id = CZE_slovakian_arms_factory
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_second_five_year_plan }
+		x = -2
+		y = 1
+		relative_position_id = CZE_second_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Finish collectivization
+	focus = {
+		id = CZE_finish_collectivization
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_second_five_year_plan }
+		x = -4
+		y = 1
+		relative_position_id = CZE_second_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
 
 	##########################################################
 	###################		   ARMY         ##################
 	##########################################################
 
+	#Focus for Reform the army
+	focus = {
+		id = CZE_reform_the_army
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 70
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Focus for Adopt the german designes
+	focus = {
+		id = CZE_adopt_german_designs
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_reform_the_army }
+		x = 1
+		y = 2
+		relative_position_id = CZE_reform_the_army
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 25
+
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 1.0
+				uses = 2
+				category = light_air
+				category = medium_air
+				category = heavy_air
+			}
+		}
+	}
+	
+	#Focus for Utilize existing factories
+	focus = {
+		id = CZE_utilize_existing_factories
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_reform_the_army }
+		x = -1
+		y = 2
+		relative_position_id = CZE_reform_the_army
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Expand onto the seas
+	focus = {
+		id = CZE_expand_onto_the_seas
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_reform_the_army }
+		x = 4
+		y = 1
+		relative_position_id = CZE_reform_the_army
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			navy_experience = 25
+		}
+	}
+	
+	#Focus for Suppress Ukrainian rebels
+	focus = {
+		id = CZE_suppress_ukranian_rebels
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_adopt_german_designs }
+		x = 0
+		y = 2
+		relative_position_id = CZE_adopt_german_designs
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Adopt Soviet model
+	focus = {
+		id = CZE_adopt_soviet_model
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_suppress_ukranian_rebels }
+		x = 0
+		y = 2
+		relative_position_id = CZE_suppress_ukranian_rebels
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Look for foreign licenses
+	focus = {
+		id = CZE_look_for_foreign_licenses
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_adopt_soviet_model }
+		x = 0
+		y = 1
+		relative_position_id = CZE_adopt_soviet_model
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for TAMARA
+	focus = {
+		id = CZE_tamara
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_look_for_foreign_licenses }
+		x = 0
+		y = 1
+		relative_position_id = CZE_look_for_foreign_licenses
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Western area
+	focus = {
+		id = CZE_western_military_buildup
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_tamara }
+		x = -2
+		y = 1
+		relative_position_id = CZE_tamara
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Central area
+	focus = {
+		id = CZE_central_military_buildup
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_tamara }
+		x = 0
+		y = 1
+		relative_position_id = CZE_tamara
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Eastern area
+	focus = {
+		id = CZE_eastern_military_buildup
+		icon = GFX_goal_unknown
+		prerequisite = { focus = CZE_tamara }
+		x = 2
+		y = 1
+		relative_position_id = CZE_tamara
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	
 #End of focuses 
  }
