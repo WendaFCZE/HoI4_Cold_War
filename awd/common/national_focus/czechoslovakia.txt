@@ -2088,6 +2088,70 @@
 		}
 	}
 
+	#Focus for Modernize infrastructure
+	focus = {
+		id = CZE_modernize_infrastructure
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_second_five_year_plan }
+		x = -6
+		y = 1
+		relative_position_id = CZE_second_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Electrify railroad
+	focus = {
+		id = CZE_electrify_railroad
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CZE_second_five_year_plan }
+		x = -8
+		y = 1
+		relative_position_id = CZE_second_five_year_plan
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
 	##########################################################
 	###################		   ARMY         ##################
 	##########################################################
@@ -2096,7 +2160,7 @@
 	focus = {
 		id = CZE_reform_the_army
 		icon = GFX_goal_generic_allies_build_infantry
-		x = 70
+		x = 80
 		y = 0
 
 		cost = 5
@@ -2124,11 +2188,11 @@
 	
 	#Focus for Adopt the german designes
 	focus = {
-		id = CZE_adopt_german_designs
-		icon = GFX_goal_unknown
+		id = CZE_adopt_german_designs 
+		icon = GFX_goal_generic_build_airforce
 		prerequisite = { focus = CZE_reform_the_army }
 		x = 1
-		y = 2
+		y = 1
 		relative_position_id = CZE_reform_the_army
 
 		cost = 5
@@ -2163,13 +2227,13 @@
 		}
 	}
 	
-	#Focus for Utilize existing factories
+	#Focus for Suppress Ukrainian rebels
 	focus = {
-		id = CZE_utilize_existing_factories
-		icon = GFX_goal_unknown
+		id = CZE_suppress_ukranian_rebels
+		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = CZE_reform_the_army }
 		x = -1
-		y = 2
+		y = 1
 		relative_position_id = CZE_reform_the_army
 
 		cost = 10
@@ -2198,9 +2262,9 @@
 	#Focus for Expand onto the seas
 	focus = {
 		id = CZE_expand_onto_the_seas
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = CZE_reform_the_army }
-		x = 4
+		x = 8
 		y = 1
 		relative_position_id = CZE_reform_the_army
 
@@ -2227,14 +2291,15 @@
 		}
 	}
 	
-	#Focus for Suppress Ukrainian rebels
+	#Focus for Simplify the designs
 	focus = {
-		id = CZE_suppress_ukranian_rebels
-		icon = GFX_goal_unknown
+		id = CZE_simplify_the_designs
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = CZE_suppress_ukranian_rebels }
 		prerequisite = { focus = CZE_adopt_german_designs }
 		x = 0
 		y = 2
-		relative_position_id = CZE_adopt_german_designs
+		relative_position_id = CZE_reform_the_army
 
 		cost = 10
 
@@ -2259,46 +2324,14 @@
 		}
 	}
 	
-	#Focus for Adopt Soviet model
+	#Focus for Renew the border fortifications
 	focus = {
-		id = CZE_adopt_soviet_model
-		icon = GFX_goal_unknown
-		prerequisite = { focus = CZE_suppress_ukranian_rebels }
-		x = 0
-		y = 2
-		relative_position_id = CZE_suppress_ukranian_rebels
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			army_experience = 25
-		}
-	}
-	
-	#Focus for Look for foreign licenses
-	focus = {
-		id = CZE_look_for_foreign_licenses
-		icon = GFX_goal_unknown
-		prerequisite = { focus = CZE_adopt_soviet_model }
-		x = 0
+		id = CZE_renew_border_fortifications
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = CZE_simplify_the_designs }
+		x = -6
 		y = 1
-		relative_position_id = CZE_adopt_soviet_model
+		relative_position_id = CZE_simplify_the_designs
 
 		cost = 10
 
@@ -2323,14 +2356,14 @@
 		}
 	}
 	
-	#Focus for TAMARA
+	#Focus for Adopt post-WW2 doctrine
 	focus = {
-		id = CZE_tamara
-		icon = GFX_goal_unknown
-		prerequisite = { focus = CZE_look_for_foreign_licenses }
-		x = 0
+		id = CZE_adopt_post_ww2_doctrine
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = CZE_simplify_the_designs }
+		x = 8
 		y = 1
-		relative_position_id = CZE_look_for_foreign_licenses
+		relative_position_id = CZE_simplify_the_designs
 
 		cost = 10
 
@@ -2355,14 +2388,15 @@
 		}
 	}
 	
-	#Focus for Western area
+	#Focus for Adapt eastern doctrine
 	focus = {
-		id = CZE_western_military_buildup
-		icon = GFX_goal_unknown
-		prerequisite = { focus = CZE_tamara }
-		x = -2
+		id = CZE_adapt_eastern_doctrine
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = CZE_adopt_post_ww2_doctrine }
+		mutually_exclusive = { focus = CZE_adapt_western_doctrine }
+		x = 1
 		y = 1
-		relative_position_id = CZE_tamara
+		relative_position_id = CZE_adopt_post_ww2_doctrine
 
 		cost = 10
 
@@ -2387,14 +2421,15 @@
 		}
 	}
 	
-	#Focus for Central area
+	#Focus for Adapt western doctrine
 	focus = {
-		id = CZE_central_military_buildup
-		icon = GFX_goal_unknown
-		prerequisite = { focus = CZE_tamara }
-		x = 0
+		id = CZE_adapt_western_doctrine
+		icon = GFX_focus_chi_mission_to_the_us
+		prerequisite = { focus = CZE_adopt_post_ww2_doctrine }
+		mutually_exclusive = { focus = CZE_adapt_eastern_doctrine }
+		x = -1
 		y = 1
-		relative_position_id = CZE_tamara
+		relative_position_id = CZE_adopt_post_ww2_doctrine
 
 		cost = 10
 
@@ -2419,14 +2454,317 @@
 		}
 	}
 	
-	#Focus for Eastern area
+	#Focus for Look for eastern designs
 	focus = {
-		id = CZE_eastern_military_buildup
-		icon = GFX_goal_unknown
-		prerequisite = { focus = CZE_tamara }
+		id = CZE_look_for_eastern_designs
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = CZE_simplify_the_designs }
+		mutually_exclusive = { focus = CZE_look_for_western_designs }
 		x = 2
 		y = 1
-		relative_position_id = CZE_tamara
+		relative_position_id = CZE_simplify_the_designs
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Look for western designs
+	focus = {
+		id = CZE_look_for_western_designs
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = CZE_simplify_the_designs }
+		mutually_exclusive = { focus = CZE_look_for_eastern_designs }
+		x = -2
+		y = 1
+		relative_position_id = CZE_simplify_the_designs
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Modernize infantry weapons
+	focus = {
+		id = CZE_modernize_infantry_weapons
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { 
+			focus = CZE_look_for_eastern_designs 
+			focus = CZE_look_for_western_designs
+		}
+		x = -2
+		y = 1
+		relative_position_id = CZE_look_for_western_designs
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Modernize artillery
+	focus = {
+		id = CZE_modernize_artillery
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = {  focus = CZE_modernize_infantry_weapons  }
+		x = 0
+		y = 1
+		relative_position_id = CZE_modernize_infantry_weapons
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Modernize airforce
+	focus = {
+		id = CZE_modernize_airforce
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { 
+			focus = CZE_look_for_eastern_designs 
+			focus = CZE_look_for_western_designs
+		}
+		x = 2
+		y = 1
+		relative_position_id = CZE_look_for_western_designs
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Focus on the fighters
+	focus = {
+		id = CZE_focus_on_fighters
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = CZE_modernize_airforce }
+		mutually_exclusive = { focus = CZE_focus_on_bombers }
+		x = -1
+		y = 1
+		relative_position_id = CZE_modernize_airforce
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Focus on the bombers
+	focus = {
+		id = CZE_focus_on_bombers
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = CZE_modernize_airforce }
+		mutually_exclusive = { focus = CZE_focus_on_fighters }
+		x = 1
+		y = 1
+		relative_position_id = CZE_modernize_airforce
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Modernize tanks
+	focus = {
+		id = CZE_modernize_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { 
+			focus = CZE_look_for_eastern_designs 
+			focus = CZE_look_for_western_designs
+		}
+		x = 6
+		y = 1
+		relative_position_id = CZE_look_for_western_designs
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Focus on light tanks
+	focus = {
+		id = CZE_focus_on_light_tanks
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = CZE_modernize_tanks }
+		mutually_exclusive = { focus = CZE_focus_on_medium_tanks }
+		x = -1
+		y = 1
+		relative_position_id = CZE_modernize_tanks
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	
+	#Focus for Focus on the medium tanks
+	focus = {
+		id = CZE_focus_on_medium_tanks
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = CZE_modernize_tanks }
+		mutually_exclusive = { focus = CZE_focus_on_light_tanks }
+		x = 1
+		y = 1
+		relative_position_id = CZE_modernize_tanks
 
 		cost = 10
 
