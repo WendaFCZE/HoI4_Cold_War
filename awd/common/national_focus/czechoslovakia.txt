@@ -772,6 +772,7 @@
 
 		completion_reward = {
 			add_research_slot = 1
+			add_ideas = CZE_peoples_army
 		}
 	}
 	
@@ -2224,6 +2225,8 @@
 				category = medium_air
 				category = heavy_air
 			}
+			
+			add_ideas = CZE_air_is_our_sea
 		}
 	}
 	

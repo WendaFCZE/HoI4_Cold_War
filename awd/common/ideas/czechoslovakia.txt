@@ -42,6 +42,76 @@ ideas = {
 				drift_defence_factor = 0.3
 			}
 		}
+	
+		CZE_aftermath_of_world_war = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.25
+				consumer_goods_factor = 0.175
+				conscription_factor = -0.2
+				join_faction_tension = 0.20
+				local_resources_factor = -0.1
+			}
+		}
+	
+		CZE_air_is_our_sea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+
+			removal_cost = -1
+			
+			research_bonus = {
+				air_doctrine = 0.10
+			}
+			
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				heavy_fighter_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+	
+		CZE_peoples_army = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communist
+			}
+			
+			picture = generic_production_bonus
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.1	
+			}
+		}
 		
 	}
 
